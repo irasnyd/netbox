@@ -1,0 +1,25 @@
+db:
+  image: postgres:9.5
+  ports:
+    - "5432:5432"
+  environment:
+    - "POSTGRES_USER=netbox"
+    - "POSTGRES_PASSWORD=netbox"
+    - "POSTGRES_DB=netbox"
+  mem_limit: 1g
+  volumes:
+    - "./postgresql-data:/var/lib/postgresql/data"
+
+web:
+  image: irasnyd/netbox:latest
+  ports:
+    - "8080:80"
+  environment:
+    - "DB_NAME=netbox"
+    - "DB_USER=netbox"
+    - "DB_PASS=netbox"
+    - "DB_HOST=db_1"
+    - "DB_PORT=5432"
+  links:
+    - "db:postgres"
+  mem_limit: 1g

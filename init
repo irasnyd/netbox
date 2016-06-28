@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ -z "$SECRET_KEY" ]]; then
+    export SECRET_KEY="$(/opt/netbox/netbox/generate_secret_key.py)"
+    echo "Generated SECRET_KEY: $SECRET_KEY"
+    echo "Copy this to your Docker configuration for a production setup"
+fi
+
+python /opt/netbox/netbox/manage.py migrate --noinput
+python /opt/netbox/netbox/manage.py collectstatic --noinput
+
+exec /usr/bin/supervisord -n -c /etc/supervisord.conf
