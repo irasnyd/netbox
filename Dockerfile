@@ -4,7 +4,7 @@ MAINTAINER Ira W. Snyder <isnyder@lcogt.net>
 EXPOSE 80
 ENTRYPOINT [ "/init" ]
 
-ENV NETBOX_VERSION v1.3.1
+ENV NETBOX_VERSION v1.3.2
 
 RUN yum -y install epel-release \
         && yum -y install gcc git graphviz libffi-devel libxml2-devel \
