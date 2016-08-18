@@ -4,6 +4,8 @@ NetBox on Docker
 This is a Docker-ized container of the excellent
 [DigitalOcean NetBox](https://github.com/digitalocean/netbox) web application.
 
+[![](https://images.microbadger.com/badges/image/irasnyd/netbox.svg)](https://microbadger.com/images/irasnyd/netbox "Get your own image badge on microbadger.com")
+
 Instructions
 ============
 
