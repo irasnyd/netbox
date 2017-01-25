@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Ira W. Snyder <isnyder@lcogt.net>
+MAINTAINER Ira W. Snyder <isnyder@lco.global>
 
 EXPOSE 80
 ENTRYPOINT [ "/init" ]
