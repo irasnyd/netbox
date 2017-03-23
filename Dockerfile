@@ -20,8 +20,4 @@ RUN mkdir -p /opt/netbox \
         && pip install -r /opt/netbox/requirements.txt \
         && rm -rf ~/.cache/pip
 
-COPY init /init
-COPY configuration.py /opt/netbox/netbox/
-COPY gunicorn_config.py /opt/netbox/
-COPY nginx.conf /etc/nginx/
-COPY processes.ini /etc/supervisord.d/
+COPY docker/ /
